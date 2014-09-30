@@ -1,0 +1,12 @@
+Source: hashstack-agent-plugin-oclhashcat
+Maintainer: Jeremi Gosney <jgosney@stricture-group.com> 
+Section: misc
+Priority: important
+Standards-Version: 3.9.2
+Build-Depends: p7zip-full, make 
+
+Package: hashstack-agent-plugin-oclhashcat
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}, hashstack-agent
+Description: oclHashcat agent plugin for Hashstack
+ oclHashcat agent plugin for Hashstack
