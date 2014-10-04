@@ -911,27 +911,27 @@
     "attacks": [
         {
             "attack": "dictionary", 
-            "command": "/opt/hashstack/programs/oclHashcat/oclHashcat64.bin --quiet --session %id% --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable -o %potfile% --gpu-temp-disable --powertune-disable --outfile-autohex-disable -d %dev% -m %mode% -w 3 -s %skip% -l %limit% %hashfile% %wordlist%"
+            "command": "/opt/hashstack/programs/oclHashcat/oclHashcat64.bin --quiet --session %id% --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable -o %potfile% --gpu-temp-disable --powertune-disable -d %dev% -m %mode% -w 3 -s %skip% -l %limit% %hashfile% %wordlist%"
         }, 
         {
             "attack": "combinator", 
-            "command": "/opt/hashstack/programs/oclHashcat/oclHashcat64.bin --quiet --session %id% --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable -o %potfile% --gpu-temp-disable --powertune-disable --outfile-autohex-disable -d %dev% -m %mode% -w 3 -a 1 -s %skip% -l %limit% %hashfile% %left_wordlist% %right_wordlist%"
+            "command": "/opt/hashstack/programs/oclHashcat/oclHashcat64.bin --quiet --session %id% --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable -o %potfile% --gpu-temp-disable --powertune-disable -d %dev% -m %mode% -w 3 -a 1 -s %skip% -l %limit% %hashfile% %left_wordlist% %right_wordlist%"
         }, 
         {
             "attack": "mask", 
-            "command": "/opt/hashstack/programs/oclHashcat/oclHashcat64.bin --quiet --session %id% --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable -o %potfile% --gpu-temp-disable --powertune-disable --outfile-autohex-disable -d %dev% -m %mode% -w 3 -a 3 -s %skip% -l %limit% %cs1% %cs2% %cs3% %cs4% %hashfile% %mask%"
+            "command": "/opt/hashstack/programs/oclHashcat/oclHashcat64.bin --quiet --session %id% --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable -o %potfile% --gpu-temp-disable --powertune-disable -d %dev% -m %mode% -w 3 -a 3 -s %skip% -l %limit% %cs1% %cs2% %cs3% %cs4% %hashfile% %mask%"
         }, 
         {
             "attack": "rules", 
-            "command": "/opt/hashstack/programs/oclHashcat/oclHashcat64.bin --quiet --session %id% --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable -o %potfile% --gpu-temp-disable --powertune-disable --outfile-autohex-disable -d %dev% -m %mode% -w 3 -s %skip% -l %limit% %hashfile% %wordlist% -r %rules%"
+            "command": "/opt/hashstack/programs/oclHashcat/oclHashcat64.bin --quiet --session %id% --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable -o %potfile% --gpu-temp-disable --powertune-disable -d %dev% -m %mode% -w 3 -s %skip% -l %limit% %hashfile% %wordlist% -r %rules%"
         }, 
         {
             "attack": "hybridLeft", 
-            "command": "/opt/hashstack/programs/oclHashcat/oclHashcat64.bin --quiet --session %id% --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable -o %potfile% --gpu-temp-disable --powertune-disable --outfile-autohex-disable -d %dev% -m %mode% -w 3 -a 6 -s %skip% -l %limit% %cs1% %cs2% %cs3% %cs4% %hashfile% %wordlist% %mask%"
+            "command": "/opt/hashstack/programs/oclHashcat/oclHashcat64.bin --quiet --session %id% --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable -o %potfile% --gpu-temp-disable --powertune-disable -d %dev% -m %mode% -w 3 -a 6 -s %skip% -l %limit% %cs1% %cs2% %cs3% %cs4% %hashfile% %wordlist% %mask%"
         }, 
         {
             "attack": "hybridRight", 
-            "command": "/opt/hashstack/programs/oclHashcat/oclHashcat64.bin --quiet --session %id% --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable -o %potfile% --gpu-temp-disable --powertune-disable --outfile-autohex-disable -d %dev% -m %mode% -w 3 -a 7 -s %skip% -l %limit% %cs1% %cs2% %cs3% %cs4% %hashfile% %mask% %wordlist%"
+            "command": "/opt/hashstack/programs/oclHashcat/oclHashcat64.bin --quiet --session %id% --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable -o %potfile% --gpu-temp-disable --powertune-disable -d %dev% -m %mode% -w 3 -a 7 -s %skip% -l %limit% %cs1% %cs2% %cs3% %cs4% %hashfile% %mask% %wordlist%"
         }
     ], 
     "is_oclHashcat": true
