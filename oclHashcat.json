@@ -200,19 +200,19 @@
             "algorithm": "phpass, MD5(Wordpress), MD5(phpBB3), MD5(Joomla)", 
             "device": "gpu", 
             "mode": "400", 
-            "tasksize": 207
+            "tasksize": 375624000
         }, 
         {
             "algorithm": "md5crypt, MD5(Unix), FreeBSD MD5, Cisco-IOS MD5", 
             "device": "gpu", 
             "mode": "500", 
-            "tasksize": 340
+            "tasksize": 375624000
         }, 
         {
             "algorithm": "Juniper IVE", 
             "device": "gpu", 
             "mode": "501", 
-            "tasksize": 340
+            "tasksize": 375624000
         }, 
         {
             "algorithm": "MD4", 
@@ -309,7 +309,7 @@
             "algorithm": "md5apr1, MD5(APR), Apache MD5", 
             "device": "gpu", 
             "mode": "1600", 
-            "tasksize": 340
+            "tasksize": 375624000
         }, 
         {
             "algorithm": "SHA512", 
@@ -385,13 +385,13 @@
             "algorithm": "sha512crypt, SHA512(Unix)", 
             "device": "gpu", 
             "mode": "1800", 
-            "tasksize": 2
+            "tasksize": 1338660
         }, 
         {
             "algorithm": "Domain Cached Credentials2, mscash2", 
             "device": "gpu", 
             "mode": "2100", 
-            "tasksize": 11
+            "tasksize": 8924400
         }, 
         {
             "algorithm": "Cisco-PIX MD5", 
@@ -411,7 +411,7 @@
             "algorithm": "WPA/WPA2", 
             "device": "gpu", 
             "mode": "2500", 
-            "tasksize": 7000
+            "tasksize": 18000000
         }, 
         {
             "algorithm": "Double MD5", 
@@ -590,85 +590,85 @@
             "algorithm": "TrueCrypt 5.0+ AES-PBKDF2-HMAC-RipeMD160", 
             "device": "gpu", 
             "mode": "6211", 
-            "tasksize": 39
+            "tasksize": 13651200
         }, 
         {
             "algorithm": "TrueCrypt 5.0+ AES-PBKDF2-HMAC-SHA512", 
             "device": "gpu", 
             "mode": "6221", 
-            "tasksize": 3
+            "tasksize": 6825600
         }, 
         {
             "algorithm": "TrueCrypt 5.0+ AES-PBKDF2-HMAC-Whirlpool", 
             "device": "gpu", 
             "mode": "6231", 
-            "tasksize": 1
+            "tasksize": 1706400
         }, 
         {
             "algorithm": "TrueCrypt 5.0+ AES-PBKDF2-HMAC-RipeMD160 + boot-mode", 
             "device": "gpu", 
             "mode": "6241", 
-            "tasksize": 75
+            "tasksize": 33936000
         }, 
         {
             "algorithm": "TrueCrypt 5.0+ AES-PBKDF2-HMAC-RipeMD160 + hidden-volume", 
             "device": "gpu", 
             "mode": "6251", 
-            "tasksize": 39
+            "tasksize": 33936000
         }, 
         {
             "algorithm": "TrueCrypt 5.0+ AES-PBKDF2-HMAC-SHA512 + hidden-volume", 
             "device": "gpu", 
             "mode": "6261", 
-            "tasksize": 3
+            "tasksize": 6825600
         }, 
         {
             "algorithm": "TrueCrypt 5.0+ AES-PBKDF2-HMAC-Whirlpool + hidden-volume", 
             "device": "gpu", 
             "mode": "6271", 
-            "tasksize": 1
+            "tasksize": 1706400
         }, 
         {
             "algorithm": "TrueCrypt 5.0+ AES-PBKDF2-HMAC-RipeMD160 + boot-mode + hidden-volume", 
             "device": "gpu", 
             "mode": "6281", 
-            "tasksize": 76
+            "tasksize": 33936000
         }, 
         {
             "algorithm": "AIX {smd5}", 
             "device": "gpu", 
             "mode": "6300", 
-            "tasksize": 342
+            "tasksize": 545268000
         }, 
         {
             "algorithm": "AIX {ssha256}", 
             "device": "gpu", 
             "mode": "6400", 
-            "tasksize": 646
+            "tasksize": 1090536000
         }, 
         {
             "algorithm": "AIX {ssha512}", 
             "device": "gpu", 
             "mode": "6500", 
-            "tasksize": 50
+            "tasksize": 136317000
         }, 
         {
             "algorithm": "1Password, agilekeychain", 
             "device": "gpu", 
             "mode": "6600", 
-            "tasksize": 1
+            "tasksize": 178296000
         }, 
         {
             "algorithm": "AIX {ssha1}", 
             "device": "gpu", 
             "mode": "6700", 
-            "tasksize": 1333
+            "tasksize": 1856208000
         }, 
         {
             "algorithm": "Lastpass", 
             "device": "gpu", 
             "mode": "6800", 
-            "tasksize": 100
+            "tasksize": 162852000
         }, 
         {
             "algorithm": "GOST R 34.11-94", 
@@ -681,13 +681,13 @@
             "algorithm": "OSX v10.8 / v10.9", 
             "device": "gpu", 
             "mode": "7100", 
-            "tasksize": 1
+            "tasksize": 246240
         }, 
         {
             "algorithm": "GRUB 2", 
             "device": "gpu", 
             "mode": "7200", 
-            "tasksize": 1
+            "tasksize": 872520
         }, 
         {
             "algorithm": "IPMI2 RAKP HMAC-SHA1", 
@@ -700,11 +700,12 @@
             "algorithm": "sha256crypt, SHA256(Unix)", 
             "device": "gpu", 
             "mode": "7400", 
-            "tasksize": 10
+            "tasksize": 15036000
         }, 
         {
             "algorithm": "Kerberos 5 AS-REQ Pre-Auth etype 23", 
             "device": "gpu", 
+            "keyspace_hack": true, 
             "mode": "7500", 
             "tasksize": 4030
         }, 
@@ -733,7 +734,7 @@
             "algorithm": "Drupal7", 
             "device": "gpu", 
             "mode": "7900", 
-            "tasksize": 1
+            "tasksize": 3161160
         }, 
         {
             "algorithm": "Sybase ASE", 
@@ -753,7 +754,7 @@
             "algorithm": "1Password, cloudkeychain", 
             "device": "gpu", 
             "mode": "8200", 
-            "tasksize": 1
+            "tasksize": 216000
         }, 
         {
             "algorithm": "DNSSEC (NSEC3)", 
