@@ -1,3 +1,9 @@
+hashstack-agent-plugin-oclhashcat (1.31-3sagitta1) precise; urgency=low
+
+  * fix all tasksizes
+
+ -- root <root@token>  Sat, 01 Nov 2014 18:50:46 -0700
+
 hashstack-agent-plugin-oclhashcat (1.31-2sagitta1) precise; urgency=low
 
   * fix tasksizes for algorithms that don't use keyspace hack
