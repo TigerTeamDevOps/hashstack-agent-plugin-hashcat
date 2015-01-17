@@ -1,3 +1,9 @@
 #!/bin/sh
 
-rm -rf /opt/hashstack/programs/oclHashcat
+rm -rf /opt/hashstack/programs/oclHashcat/*.outfiles
+rm -rf /opt/hashstack/programs/oclHashcat/*.induct
+rm -rf /opt/hashstack/programs/oclHashcat/kernels
+rm -f /opt/hashstack/programs/oclHashcat/eula.accepted
+rm -f /opt/hashstack/programs/oclHashcat/oclHashcat64.bin
+
+exit 0

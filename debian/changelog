@@ -1,3 +1,21 @@
+hashstack-agent-plugin-oclhashcat (1.31-6sagitta1) precise; urgency=low
+
+  * srsly now...
+
+ -- epixoip <epixoip@token>  Sat, 01 Nov 2014 23:10:21 -0700
+
+hashstack-agent-plugin-oclhashcat (1.31-5sagitta1) precise; urgency=low
+
+  * srsly fix preinst
+
+ -- epixoip <epixoip@token>  Sat, 01 Nov 2014 22:25:27 -0700
+
+hashstack-agent-plugin-oclhashcat (1.31-4sagitta1) precise; urgency=low
+
+  * fix preinst/postrm
+
+ -- root <root@token>  Sat, 01 Nov 2014 21:47:30 -0700
+
 hashstack-agent-plugin-oclhashcat (1.31-3sagitta1) precise; urgency=low
 
   * fix all tasksizes

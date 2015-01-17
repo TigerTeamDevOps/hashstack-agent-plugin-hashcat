@@ -1,3 +1,5 @@
+oclHashcat, advanced password recovery
+
 Purpose
 
 Software has been created for scientific, analyzation, demonstration and
@@ -7,8 +9,7 @@ restricted to legal use.
 
 License agreement
 
-1. All copyrights to this program are exclusively owned by the author --
-atom
+1. All copyrights to this program are exclusively owned by the author, atom.
 
 2. You may only use this software for legal purposes.
 
