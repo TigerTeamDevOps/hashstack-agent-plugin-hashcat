@@ -11,3 +11,4 @@ Depends: ${shlibs:Depends}, ${misc:Depends}, hashstack-agent, fglrx
 Recommends: od6config
 Description: oclHashcat agent plugin for Hashstack
  oclHashcat agent plugin for Hashstack
+
