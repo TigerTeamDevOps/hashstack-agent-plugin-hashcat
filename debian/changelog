@@ -1,3 +1,9 @@
+hashstack-agent-plugin-oclhashcat (1.34-0sagitta1) precise; urgency=low
+
+  * upgrade to oclHashcat 1.34
+
+ -- epixoip <epixoip@token>  Sat, 21 Mar 2015 14:44:33 -0700
+
 hashstack-agent-plugin-oclhashcat (1.32-0sagitta1) precise; urgency=low
 
   * upgrade to oclHashcat 1.32
@@ -34,14 +40,14 @@ hashstack-agent-plugin-oclhashcat (1.31-2sagitta1) precise; urgency=low
 
  -- epixoip <epixoip@token>  Mon, 20 Oct 2014 17:32:54 -0700
 
-hashstack-agent-plugin-oclhashcat (1.31) UNRELEASED; urgency=low
+hashstack-agent-plugin-oclhashcat (1.31) precise; urgency=low
 
   * Upgrade to oclHashcat 1.31
 
  -- Jeremi Gosney <jgosney@stricture-group.com>  Sat, 4 Oct 2014 02:26:53 -0700
 
 
-hashstack-agent-plugin-oclhashcat (1.30) UNRELEASED; urgency=low
+hashstack-agent-plugin-oclhashcat (1.30) precise; urgency=low
 
   * Initial release.
 
