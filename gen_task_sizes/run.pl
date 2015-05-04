@@ -1,0 +1,185 @@
+#!/usr/bin/env perl
+
+use Modern::Perl;
+use File::Slurp;
+use JSON;
+
+my $wordlist = '/home/epixoip/recovered/split/08';
+
+my $plugin_json = read_file ('../oclHashcat.json') or die "cannot read oclHashcat modes file!\n";
+my $plugin = decode_json $plugin_json;
+
+my %hashes = (
+    'MD5' => '8743b52063cd84097a65d1633f5c74f5',
+    'md5($pass.$salt)' => '01dfae6e5d4d90d9892622325959afbe:7050461',
+    'Joomla < 2.5.18' => '19e0e8d91c722e7091ca7a6a6fb0f4fa:54718031842521651757785603028777',
+    'md5($salt.$pass)' => 'f0fda58630310a6dd91a7d8f0a4ceda2:4225637426',
+    'osCommerce, xt:Commerce' => 'f0fda58630310a6dd91a7d8f0a4ceda2:42',
+    'Juniper Netscreen/SSG (ScreenOS)' => 'nNxKL2rOEkbBc9BFLsVGG6OtOUO/8n:user',
+    'md5(unicode($pass).$salt)' => 'b31d032cfdcf47a399990a71e43c5d2a:144816',
+    'md5($salt.unicode($pass))' => 'b31d032cfdcf47a399990a71e43c5d2a:144816',
+    'HMAC-MD5 (key = $pass)' => 'fc741db0a2968c39d9c2a5cc75b05370:1234',
+    'HMAC-MD5 (key = $salt)' => 'bfd280436f45fa38eaacac3b00518f29:1234',
+    'SHA1' => 'b89eaac7e61417341b710b727768294d0e6a277b',
+    'nsldap, SHA-1(Base64), Netscape LDAP SHA' => '{SHA}uJ6qx+YUFzQbcQtyd2gpTQ5qJ3s=',
+    'sha1($pass.$salt)' => '2fc5a684737ce1bf7b3b239df432416e0dd07357:2014',
+    'nsldaps, SSHA-1(Base64), Netscape LDAP SSHA' => '{SSHA}AZKja92fbuuB9SpRlHqaoXxbTc43Mzc2MDM1Ng==',
+    'Oracle 11g/12c' => 'ac5f1e62d21fd0529428b84d42e8955b04966703:38445748184477378130',
+    'sha1($salt.$pass)' => 'cac35ec206d868b7d7cb0b55f31d9425b075082b:5363620024',
+    'sha1($salt.$pass.$salt)' => 'cac35ec206d868b7d7cb0b55f31d9425b075082b:5363620024',
+    'SMF > v1.1' => 'ecf076ce9d6ed3624a9332112b1cd67b236fdd11:17782686',
+    'OSX v10.4, v10.5, v10.6' => '1430823483d07626ef8be3fda2ff056d0dfd818dbfe47683',
+    'sha1(unicode($pass).$salt)' => 'c57f6ac1b71f45a07dbd91a59fa47c23abcd87c2:631225',
+    'MSSQL(2000)' => '0x01002702560500000000000000000000000000000000000000008db43dd9b1972a636ad0c7d4b8c515cb8ce46578',
+    'MSSQL(2005)' => '0x010018102152f8f28c8499d8ef263c53f8be369d799f931b2fbe',
+    'sha1($salt.unicode($pass))' => '5db61e4cd8776c7969cfd62456da639a4c87683a:8763434884872',
+    'EPiServer 6.x < v4' => '$episerver$*0*bEtiVGhPNlZpcUN4a3ExTg==*utkfN0EOgljbv5FoZ6+AcZD5iLk',
+    'HMAC-SHA1 (key = $pass)' => 'c898896f3f70f61bc3fb19bef222aa860e5ea717:1234',
+    'HMAC-SHA1 (key = $salt)' => 'c898896f3f70f61bc3fb19bef222aa860e5ea717:1234',
+    'sha1(LinkedIn)' => 'c898896f3f70f61bc3fb19bef222aa860e5ea717',
+    'MySQL323' => '7196759210defdc0',
+    'MySQL4.1/MySQL5' => 'FCF7C1B8749CF99D88E5F34271D636178FB5D130',
+    'phpass, MD5(Wordpress), MD5(phpBB3), MD5(Joomla)' => '$P$984478476IagS59wHZvyQMArzfx58u.',
+    'md5crypt, MD5(Unix), FreeBSD MD5, Cisco-IOS MD5' => '$1$28772684$iEwNOgGugqO9.bIz5sk8k/',
+    'Juniper IVE' => '3u+UR6n8AgABAAAAHxxdXKmiOmUoqKnZlf8lTOhlPYy93EAkbPfs5+49YLFd/B1+omSKbW7DoqNM40/EeVnwJ8kYoXv9zy9D5C5m5A==',
+    'MD4' => 'afe04867ec7a3845145579a95f72eca7',
+    'NTLM' => 'afe04867ec7a3845145579a95f72eca7',
+    'Domain Cached Credentials, mscash' => '4dd8965d1d476fa0d026722989a6b772:3060147285011',
+    'SHA256' => '127e6fbfe24a750e72930c220a8e138275656b8e5d8f48a98c3c92df2caba935',
+    'sha256($pass.$salt)' => 'c73d08de890479518ed60cf670d17faa26a4a71f995c1dcc978165399401a6c4:53743528',
+    'sha256($salt.$pass)' => 'c73d08de890479518ed60cf670d17faa26a4a71f995c1dcc978165399401a6c4:53743528',
+    'hMailServer' => '8fe7ca27a17adc337cd892b1d959b4e487b8f0ef09e32214f44fb1b07e461c532e9ec3',
+    'sha256(unicode($pass).$salt)' => '4cc8eb60476c33edac52b5a7548c2c50ef0f9e31ce656c6f4b213f901bc87421:890128',
+    'sha256($salt.unicode($pass))' => '4cc8eb60476c33edac52b5a7548c2c50ef0f9e31ce656c6f4b213f901bc87421:890128',
+    'EPiServer 6.x > v4' => '$episerver$*1*MDEyMzQ1Njc4OWFiY2RlZg==*lRjiU46qHA7S6ZE7RfKUcYhB85ofArj1j7TrCtu3u6Y',
+    'HMAC-SHA256 (key = $pass)' => 'abaf88d66bf2334a4a8b207cc61a96fb46c3e38e882e6f6f886742f688b8588c:1234',
+    'HMAC-SHA256 (key = $salt)' => 'abaf88d66bf2334a4a8b207cc61a96fb46c3e38e882e6f6f886742f688b8588c:1234',
+    'SHA384' => 'f5e2dd85fe11cec4c913f0f1fcecddb4a654dd92852f978d6345638a0779a5e77ea39d33d6254bde0e1afa7a6c8ef0b9',
+    'descrypt, DES(Unix), Traditional DES' => '48c/R8JAv757A',
+    'md5apr1, MD5(APR), Apache MD5' => '$apr1$71850310$gh9m4xcAn3MGxogwX/ztb.',
+    'SHA512' => '82a9dda829eb7f8ffe9fbe49e45d47d2dad9664fbb7adf72492e3c81ebd3e29134d9bc12212bf83c6840f10e8246b9db54a4859b7ccd0123d86e5872c1e5082f',
+    'sha512($pass.$salt)' => 'e5c3ede3e49fb86592fb03f471c35ba13e8d89b8ab65142c9a8fdafb635fa2223c24e5558fd9313e8995019dcbec1fb584146b7bb12685c7765fc8c0d51379fd:6352283260',
+    'SSHA-512(Base64), LDAP {SSHA512}' => '{SSHA512}ALtwKGBdRgD+U0fPAy31C28RyKYx7+a8kmfksccsOeLknLHv2DBXYI7TDnTolQMBuPkWDISgZr2cHfnNPFjGZTEyNDU4OTkw',
+    'sha512($salt.$pass)' => '976b451818634a1e2acba682da3fd6efa72adf8a7a08d7939550c244b237c72c7d42367544e826c0c83fe5c02f97c0373b6b1386cc794bf0d21d2df01bb9c08a:2613516180127',
+    'OSX v10.7' => '648742485c9b0acd786a233b2330197223118111b481abfa0ab8b3e8ede5f014fc7c523991c007db6882680b09962d16fd9c45568260531bdb34804a5e31c22b4cfeb32d',
+    'sha512(unicode($pass).$salt)' => '13070359002b6fbb3d28e50fba55efcf3d7cc115fe6e3f6c98bf0e3210f1c6923427a1e1a3b214c1de92c467683f6466727ba3a51684022be5cc2ffcb78457d2:341351589',
+    'MSSQL(2012), MSSQL(2014)' => '0x02000102030434ea1b17802fd95ea6316bd61d2c94622ca3812793e8fb1672487b5c904a45a31b2ab4a78890d563d2fcf5663e46fe797d71550494be50cf4915d3f4d55ec375',
+    'sha512($salt.unicode($pass))' => 'bae3a3358b3459c761a3ed40d34022f0609a02d90a0d7274610b16147e58ece00cd849a0bd5cf6a92ee5eb5687075b4e754324dfa70deca6993a85b2ca865bc8:1237015423',
+    'HMAC-SHA512 (key = $pass)' => '94cb9e31137913665dbea7b058e10be5f050cc356062a2c9679ed0ad6119648e7be620e9d4e1199220cd02b9efb2b1c78234fa1000c728f82bf9f14ed82c1976:1234',
+    'HMAC-SHA512 (key = $salt)' => '7cce966f5503e292a51381f238d071971ad5442488f340f98e379b3aeae2f33778e3e732fcc2f7bdc04f3d460eebf6f8cb77da32df25500c09160dd3bf7d2a6b:1234',
+    'sha512crypt, SHA512(Unix)' => '$6$52450745$k5ka2p8bFuSmoVT1tzOyyuaREkkKBcCNqoDKzYiJL9RaE8yMnPgh2XzzF0NDrUhgrcLwg78xs1w5pJiypEdFX/',
+    'Domain Cached Credentials2, mscash2' => '$DCC2$10240#tom#e4e938d12fe5974dc42a90120bd9c90f',
+    'Cisco-PIX MD5' => 'dRRVnUmUHXOTt9nk',
+    'Cisco-ASA MD5' => '02dMBMYkTdC5Ziyp:36',
+    'WPA/WPA2' => '../gen_task_sizes/hashcat.hccap',
+    'Double MD5' => 'a936af92b0ae20b1ff6c3347a72e5fbe',
+    'vBulletin < v3.8.5' => '16780ba78d2d5f02f3202901c1b6d975:568',
+    'PHPS' => '$PHPS$34323438373734$5b07e065b9d78d69603e71201c6cf29f',
+    'vBulletin > v3.8.5' => 'bf366348c53ddcfbd16e63edfdd1eee6:181264250056774603641874043270',
+    'IPB2+, MyBB1.2+' => '8d2129083ef35f4b365d5d87487e1207:47204',
+    'LM' => '299bd128c1101fd6',
+    'Oracle 7-10g, DES(Oracle)' => '7A963A529D2E3229:3682427524',
+    'md5($salt.md5($pass))' => '95248989ec91f6d0439dbde2bd0140be:1234',
+    'md5($pass.$salt.$pass)' => '2e45c4b99396c6cb2db8bda0d3df669f:1234',
+    'md5(strtoupper(md5($pass)))' => '2e45c4b99396c6cb2db8bda0d3df669f',
+    'md5(sha1($pass))' => '2e45c4b99396c6cb2db8bda0d3df669f',
+    'Double SHA1' => '3db9184f5da4e463832b086211af8d2314919951',
+    'sha1(md5($pass))' => '92d85978d884eb1d99a51652b1139c8279fa8663',
+    'MD5(Chap), iSCSI CHAP authentication' => 'afd09efdd6f8ca9f18ec77c5869788c3:01020304050607080910111213141516:01',
+    'SHA-3(Keccak)' => '203f88777f18bb4ee1226627b547808f38d90d3e106262b5de9ca943b57137b6',
+    'Half MD5' => '8743b52063cd8409',
+    'Password Safe v3' => '../gen_task_sizes/hashcat.psafe3',
+    'Password Safe v2' => '../gen_task_sizes/hashcat.psafe2.dat',
+    'IKE-PSK MD5' => '../gen_task_sizes/hashcat.ikemd5',
+    'IKE-PSK SHA1' => '../gen_task_sizes/hashcat.ikesha1',
+    'NetNTLMv1-VANILLA / NetNTLMv1+ESS' => 'u4-netntlm::kNS:338d08f8e26de93300000000000000000000000000000000:9526fb8c23a90751cdd619b6cea564742e1e4bf33006ba41:cb8086049ec4736c',
+    'NetNTLMv2' => 'admin::N46iSNekpT:08ca45b7d7ea58ee:88dcbe4446168966a153a0064958dac6:5c7830315c7830310000000000000b45c67103d07d7b95acd12ffa11230e0000000052920b85f78d013c31cdb3b92f5d765c783030',
+    'Cisco-IOS SHA256' => '2btjjy78REtmYkkW0csHUbJZOstRXoWdX1mGrmmfeHI',
+    'Android Password/PIN' => '0223b799d526b596fe4ba5628b9e65068227e68e:f6d45822728ddb2c',
+    'RipeMD160' => '012cb9b334ec1aeb71a9c8ce85586082467f7eb6',
+    'Whirlpool' => '7ca8eaaaa15eaa4c038b4c47b9313e92da827c06940e69947f85bc0fbef3eb8fd254da220ad9e208b6b28f6bb9be31dd760f1fdb26112d83f87d96b416a4d258',
+    'TrueCrypt 5.0+ AES-PBKDF2-HMAC-RipeMD160' => '../gen_task_sizes/hashcat_ripemd160.tc',
+    'TrueCrypt 5.0+ AES-PBKDF2-HMAC-SHA512' => '../gen_task_sizes/hashcat_sha512.tc',
+    'TrueCrypt 5.0+ AES-PBKDF2-HMAC-Whirlpool' => '../gen_task_sizes/hashcat_whirlpool.tc',
+    'TrueCrypt 5.0+ AES-PBKDF2-HMAC-RipeMD160 + boot-mode' => '../gen_task_sizes/hashcat_ripemd160_boot.tc',
+    'TrueCrypt 5.0+ AES-PBKDF2-HMAC-RipeMD160 + hidden-volume' => '../gen_task_sizes/hashcat_ripemd160.tc',
+    'TrueCrypt 5.0+ AES-PBKDF2-HMAC-SHA512 + hidden-volume' => '../gen_task_sizes/hashcat_sha512.tc',
+    'TrueCrypt 5.0+ AES-PBKDF2-HMAC-Whirlpool + hidden-volume' => '../gen_task_sizes/hashcat_whirlpool.tc',
+    'TrueCrypt 5.0+ AES-PBKDF2-HMAC-RipeMD160 + boot-mode + hidden-volume' => '../gen_task_sizes/hashcat_ripemd160_boot.tc',
+    'AIX {smd5}' => '{smd5}a5/yTL/u$VfvgyHx1xUlXZYBocQpQY0',
+    'AIX {ssha256}' => '{ssha256}06$aJckFGJAB30LTe10$ohUsB7LBPlgclE3hJg9x042DLJvQyxVCX.nZZLEz.g2',
+    'AIX {ssha512}' => '{ssha512}06$bJbkFGJAB30L2e23$bXiXjyH5YGIyoWWmEVwq67nCU5t7GLy9HkCzrodRCQCx3r9VvG98o7O3V0r9cVrX3LPPGuHqT5LLn0oGCuI1..',
+    '1Password, agilekeychain' => '../gen_task_sizes/hashcat.agilekeychain',
+    'AIX {ssha1}' => '{ssha1}06$bJbkFGJAB30L2e23$dCESGOsP7jaIIAJ1QAcmaGeG.kr',
+    'Lastpass' => 'a2d1f7b7a1862d0d4a52644e72d59df5:500:lp@trash-mail.com',
+    'GOST R 34.11-94' => 'df226c2c6dcb1d995c0299a33a084b201544293c31fc3d279530121d36bbcea9',
+    'OSX v10.8 / v10.9' => '$ml$35460$93a94bd24b5de64d79a5e49fa372827e739f4d7b6975c752c9a0ff1e5cf72e05$752351df64dd2ce9dc9c64a72ad91de6581a15c19176266b44d98919dfa81f0f96cbcb20a1ffb400718c20382030f637892f776627d34e021bad4f81b7de8222',
+    'GRUB 2' => 'grub.pbkdf2.sha512.10000.7d391ef48645f626b427b1fae06a7219b5b54f4f02b2621f86b5e36e83ae492bd1db60871e45bc07925cecb46ff8ba3db31c723c0c6acbd4f06f60c5b246ecbf.26d59c52b50df90d043f070bd9cbcd92a74424da42b3666fdeb08f1a54b8f1d2f4f56cf436f9382419c26798dc2c209a86003982b1e5a9fcef905f4dfaa4c524',
+    'IPMI2 RAKP HMAC-SHA1' => 'b7c2d6f13a43dce2e44ad120a9cd8a13d0ca23f0414275c0bbe1070d2d1299b1c04da0f1a0f1e4e2537300263a2200000000000000000000140768617368636174:472bdabe2d5d4bffd6add7b3ba79a291d104a9ef',
+    'sha256crypt, SHA256(Unix)' => '$5$rounds=5000$GX7BopJZJxPc/KEK$le16UF8I2Anb.rOrn22AUPWvzUETDGefUmAV8AZkGcD',
+    'Kerberos 5 AS-REQ Pre-Auth etype 23' => '$krb5pa$23$user$realm$salt$4e751db65422b2117f7eac7b721932dc8aa0d9966785ecd958f971f622bf5c42dc0c70b532363138363631363132333238383835',
+    'Redmine Project Management Web App' => '1fb46a8f81d8838f46879aaa29168d08aa6bf22d:3290afd193d90e900e8021f81409d7a9',
+    'SAP CODVN B (BCODE)' => 'user$c8b48f26b87b7ea7',
+    'SAP CODVN F/G (PASSCODE)' => 'user$abcad719b17e7f794df7e686e563e9e2d24de1d0',
+    'SAP CODVN H (PWDSALTEDHASH)' => '{x-issha, 1024}C0624EvGSdAMCtuWnBBYBGA0chvqAflKY74oEpw/rpY=',
+    'Drupal7' => '$S$C33783772bRXEx1aCsvY.dqgaaSu76XmVlKrW9Qu8IQlvxHlmzLf',
+    'Sybase ASE' => '0xc00778168388631428230545ed2c976790af96768afa0806fe6c0da3b28f3e132137eac56f9bad027ea2',
+    'Citrix Netscaler' => '1765058016a22f1b4e076dccd1c3df4e8e5c0839ccded98ea',
+    '1Password, cloudkeychain' => '../gen_task_sizes/hashcat.cloudkeychain',
+    'DNSSEC (NSEC3)' => '7b5n74kq8r441blc2c5qbbat19baj79r:.lvdsiqfj.net:33164473:1',
+    'WBB3, Woltlab Burning Board 3' => '8084df19a6dc81e2597d051c3d8b400787e2d5a9:6755045315424852185115352765375338838643',
+    'RACF' => '$racf$*USER*FC2577C6EBE6265B',
+    'Lotus Notes/Domino 5' => '3dd2e1e5ac03e230243d58b8c5ada076',
+    'Lotus Notes/Domino 6' => '(GDpOtD35gGlyDksQRxEU)',
+    'Android FDE <= 4.3' => '../gen_task_sizes/hashcat.android43fde',
+    'Lotus Notes/Domino 8' => '(HsjFebq0Kh9kH7aAZYc7kY30mC30mC3KmC30mCluagXrvWKj1)',
+    'Cisco $8$' => '$8$TnGX/fE4KGHOVU$pEhnEvxrvaynpi8j4f.EMHr6M.FzU8xnZnBr/tJdFWk',
+    'Cisco $9$' => '$9$2MJBozw/9R3UsU$2lFhcKvpghcyw8deP25GOfyZaagyUOGBymkryvOdfo6',
+    'Microsoft Office 2007' => '$office$*2007*20*128*16*411a51284e0d0200b131a8949aaaa5cc*117d532441c63968bee7647d9b7df7d6*df1d601ccf905b375575108f42ef838fb88e1cde',
+    'Microsoft Office 2010' => '$office$*2010*100000*128*16*77233201017277788267221014757262*b2d0ca4854ba19cf95a2647d5eee906c*e30cbbb189575cafb6f142a90c2622fa9e78d293c5b0c001517b3f5b82993557',
+    'Microsoft Office 2013' => '$office$*2013*100000*256*16*7dd611d7eb4c899f74816d1dec817b3b*948dc0b2c2c6c32f14b5995a543ad037*0b7ee0e48e935f937192a59de48a7d561ef2691d5c8a3ba87ec2d04402a94895',
+    'Microsoft Office 97-2003 MD5 + RC4' => '$oldoffice$1*04477077758555626246182730342136*b1b72ff351e41a7c68f6b45c4e938bd6*0d95331895e99f73ef8b6fbc4a78ac1a',
+    'Microsoft Office 97-2003 SHA1 + RC4' => '$oldoffice$3*83328705222323020515404251156288*2855956a165ff6511bc7f4cd77b9e101*941861655e73a09c40f7b1e9dfd0c256ed285acd',
+    'Radmin2' => '22527bee5c29ce95373c4e0f359f079b',
+    'Django (PBKDF2-SHA256)' => 'pbkdf2_sha256$20000$H0dPx8NeajVu$GiC4k5kqbbR9qWBlsRgDywNqC2vd9kqfk7zdorEnNas=',
+    'SipHash' => 'ad61d78c06037cd9:2:4:81533218127174468417660201434054',
+    'PostgreSQL' => 'c5fac13a3631856056376ae1ccb8bde0:60662770268617182557464237457880',
+    'Skype' => '3af0389f093b181ae26452015f4ae728:user',
+    'Django (SHA-1)' => 'sha1$$b89eaac7e61417341b710b727768294d0e6a277b',
+    'PeopleSoft' => 'uXmFVrdBvv293L9kDR3VnRmx4ZM=',
+    'Mediawiki B type' => '$B$56668501$0ce106caa70af57fd525aeaf80ef2898',
+    'Cram MD5' => '$cram_md5$PG5vLXJlcGx5QGhhc2hjYXQubmV0Pg==$dXNlciA0NGVhZmQyMmZlNzY2NzBmNmIyODc5MDgxYTdmNWY3MQ==',
+    'Adobe PDF 1.1 - 1.3 (Acrobat 2 - 4)' => '$pdf$1*2*40*-1*0*16*51726437280452826511473255744374*32*9b09be05c226214fa1178342673d86f273602b95104f2384b6c9b709b2cbc058*32*0000000000000000000000000000000000000000000000000000000000000000',
+    'Adobe PDF 1.4 - 1.6 (Acrobat 5 - 8)' => '$pdf$2*3*128*-1028*1*16*da42ee15d4b3e08fe5b9ecea0e02ad0f*32*c9b59d72c7c670c42eeb4fca1d2ca15000000000000000000000000000000000*32*c4ff3e868dc87604626c2b8c259297a14d58c6309c70b00afdfb1fbba10ee571',
+    'Adobe PDF 1.7 Level 3 (Acrobat 9)' => '$pdf$5*5*256*-1028*1*16*20583814402184226866485332754315*127*f95d927a94829db8e2fbfbc9726ebe0a391b22a084ccc2882eb107a74f7884812058381440218422686648533275431500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000*127*00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000*32*0000000000000000000000000000000000000000000000000000000000000000*32*0000000000000000000000000000000000000000000000000000000000000000',
+    'Adobe PDF 1.7 Level 8 (Acrobat 10 - 11)' => '$pdf$5*6*256*-4*1*16*381692e488413f5502fa7314a78c25db*48*e5bf81a2a23c88f3dccb44bc7da68bb5606b653b733bcf9adaa5eb2c8ccf53abba66539044eb1957eda68469b1d0b9b5*48*b222df06deb308bf919d13447e688775fdcab972faed2c866dc023a126cb4cd4bbffab3683ecde243cf8d88967184680',
+    'PBKDF2-HMAC-SHA256' => 'sha256:1000:2u/ADvs2B8VuxUO/+4PmpxjZ/fn+b/9m:sc1o8cBmd2M8WWhh5WTgSKArGUw0NaJ8',
+    'PrestaShop' => '810e3d12f0f10777a679d9ca1ad7a8d9:M2uZ122bSHJ4Mi54tXGY0lqcv1r28mUluSkyw37ou5oia4i239ujqw0l',
+    'PostgreSQL Challenge-Response Authentication (MD5)' => '$postgres$postgres*f0784ea5*2091bb7d4725d1ca85e8de6ec349baf6',
+    'MySQL Challenge-Response Authentication (SHA1)' => '$mysqlna$1c24ab8d0ee94d70ab1f2e814d8f0948a14d10b9*437e93572f18ae44d9e779160c2505271f85821d',
+    'Bitcoin/Litecoin wallet.dat' => '$bitcoin$96$d011a1b6a8d675b7a36d0cd2efaca32a9f8dc1d57d6d01a58399ea04e703e8bbb44899039326f7a00f171a7bbc854a54$16$1563277210780230$158555$96$628835426818227243334570448571536352510740823233055715845322741625407685873076027233865346542174$66$625882875480513751851333441623702852811440775888122046360561760525',
+    'SIP digest authentication (MD5)' => '$sip$*192.168.100.100*192.168.100.121*username*asterisk*REGISTER*sip*192.168.100.121**2b01df0b****MD5*ad0520061ca07c120d7e8ce696a6df2d',
+    'CRC32' => 'c762de4a:00000000'
+);
+
+say "{";
+say "    \"algorithms\": [";
+
+foreach my $format (@{$$plugin{'algorithms'}})
+{
+    my $form = $format->{'algorithm'};
+    my $hash = $hashes{$form};
+    my $mode = $format->{'mode'};
+
+    my $tasksize = `./oclHashcat64.bin -d 1 -w 3 -m $mode '$hash' $wordlist -r rules/rockyou-30000.rule --status-automat --runtime 10 | sed -rn 's/STATUS.*PROGRESS\\t([0-9]+)\\t.*/\\1/p' | tail -n 1`;
+    $tasksize = $tasksize * 12;  # progress made in 10 sec * 12 ~= progress made in 120 sec
+
+    say "        {";
+    say "            \"algorithm\": \"$form\",";
+    say "            \"device\": \"gpu\",";
+    say "            \"keyspace_hack\": true,";
+    say "            \"mode\": \"$mode\",";
+    say "            \"tasksize\": $tasksize";
+    say "        },";
+
+}

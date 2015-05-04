@@ -1,3 +1,9 @@
+hashstack-agent-plugin-oclhashcat (1.36-0sagitta1) precise; urgency=low
+
+  * upgrade to oclHashcat 1.36
+
+ -- epixoip <epixoip@token>  Mon, 04 May 2015 15:34:41 -0700
+
 hashstack-agent-plugin-oclhashcat (1.34-0sagitta1) precise; urgency=low
 
   * upgrade to oclHashcat 1.34
