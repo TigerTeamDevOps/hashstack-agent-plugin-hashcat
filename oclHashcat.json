@@ -694,7 +694,7 @@
             "tasksize": 2251358208
         }, 
         {
-            "algorithm": "Lastpass", 
+            "algorithm": "Lastpass (cached)", 
             "device": "gpu", 
             "keyspace_hack": true, 
             "mode": "6800", 
