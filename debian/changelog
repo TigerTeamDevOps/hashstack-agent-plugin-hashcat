@@ -1,3 +1,9 @@
+hashstack-agent-plugin-oclhashcat (1.37-0sagitta1) precise; urgency=low
+
+  * Partial upgrade to 1.37
+
+ -- Jeremi Gosney <jgosney@sagitta.pw>  Sat, 17 Oct 2015 11:16:59 -0700
+
 hashstack-agent-plugin-oclhashcat (1.36-0sagitta1) precise; urgency=low
 
   * upgrade to oclHashcat 1.36
