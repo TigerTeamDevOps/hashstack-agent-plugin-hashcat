@@ -1,3 +1,21 @@
+hashstack-agent-plugin-oclhashcat (2.01-1sagitta1) trusty; urgency=medium
+
+  * use all devices
+
+ -- Jeremi Gosney <jgosney@sagitta.pw>  Fri, 15 Jan 2016 18:03:22 -0800
+
+hashstack-agent-plugin-oclhashcat (2.01-0sagitta1) precise; urgency=low
+
+  * Upgrade to 2.01 (at least partially)
+
+ -- Jeremi Gosney <jgosney@sagitta.pw>  Mon, 04 Jan 2016 22:19:46 -0800
+
+hashstack-agent-plugin-oclhashcat (1.37-1sagitta1) precise; urgency=low
+
+  * Fix depends
+
+ -- Jeremi Gosney <jgosney@sagitta.pw>  Sat, 17 Oct 2015 11:56:13 -0700
+
 hashstack-agent-plugin-oclhashcat (1.37-0sagitta1) precise; urgency=low
 
   * Partial upgrade to 1.37

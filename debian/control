@@ -7,7 +7,7 @@ Build-Depends: p7zip-full, make
 
 Package: hashstack-agent-plugin-oclhashcat
 Architecture: amd64
-Depends: hashstack-amd-driver, ${shlibs:Depends}, ${misc:Depends}
+Depends: fglrx, libc6 (>= 2.3.4)
 Description: oclHashcat agent plugin for Hashstack
  oclHashcat agent plugin for Hashstack
 
