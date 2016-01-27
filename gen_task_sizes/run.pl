@@ -159,7 +159,13 @@ my %hashes = (
     'MySQL Challenge-Response Authentication (SHA1)' => '$mysqlna$1c24ab8d0ee94d70ab1f2e814d8f0948a14d10b9*437e93572f18ae44d9e779160c2505271f85821d',
     'Bitcoin/Litecoin wallet.dat' => '$bitcoin$96$d011a1b6a8d675b7a36d0cd2efaca32a9f8dc1d57d6d01a58399ea04e703e8bbb44899039326f7a00f171a7bbc854a54$16$1563277210780230$158555$96$628835426818227243334570448571536352510740823233055715845322741625407685873076027233865346542174$66$625882875480513751851333441623702852811440775888122046360561760525',
     'SIP digest authentication (MD5)' => '$sip$*192.168.100.100*192.168.100.121*username*asterisk*REGISTER*sip*192.168.100.121**2b01df0b****MD5*ad0520061ca07c120d7e8ce696a6df2d',
-    'CRC32' => 'c762de4a:00000000'
+    'CRC32' => 'c762de4a:00000000',
+    '7zip' => '$7z$0$19$0$salt$8$f6196259a7326e3f0000000000000000$185065650$112$98$f3bc2a88062c419a25acd40c0c2d75421cf23263f69c51b13f9b1aada41a8a09f9adeae45d67c60b56aad338f20c0dcc5eb811c7a61128ee0746f922cdb9c59096869f341c7a9cb1ac7bb7d771f546b82cf4e6f11a5ecd4b61751e4d8de66dd6e2dfb5b7d1022d2211e2d66ea1703f96',
+    'Blockchain.info Wallet' => '$blockchain$288$5420055827231730710301348670802335e45a6f5f631113cb1148a6e96ce645ac69881625a115fd35256636d0908217182f89bdd53256a764e3552d3bfe68624f4f89bb6de60687ff1ebb3cbf4e253ee3bea0fe9d12d6e8325ddc48cc924666dc017024101b7dfb96f1f45cfcf642c45c83228fe656b2f88897ced2984860bf322c6a89616f6ea5800aadc4b293ddd46940b3171a40e0cca86f66f0d4a487aa3a1beb82569740d3bc90bc1cb6b4a11bc6f0e058432cc193cb6f41e60959d03a84e90f38e54ba106fb7e2bfe58ce39e0397231f7c53a4ed4fd8d2e886de75d2475cc8fdc30bf07843ed6e3513e218e0bb75c04649f053a115267098251fd0079272ec023162505725cc681d8be12507c2d3e1c9520674c68428df1739944b8ac',
+    'PBKDF2-HMAC-SHA1' => 'sha1:1000:MzU4NTA4MzIzNzA1MDQ=:19ofiY+ahBXhvkDsp0j2ww==',
+    'Apple iOS 7+ .plist' => 'sha1:1000:MzU4NTA4MzIzNzA1MDQ=:19ofiY+ahBXhvkDsp0j2ww==',
+    'PBKDF2-HMAC-SHA512' => 'sha512:1000:ODQyMDEwNjQyODY=:MKaHNWXUsuJB3IEwBHbm3w==',
+    'RAR 3.x' => '$RAR3$*0*45109af8ab5f297a*adbf6c5385d7a40373e8f77d7b89d317'
 );
 
 say "{";
@@ -171,8 +177,8 @@ foreach my $format (@{$$plugin{'algorithms'}})
     my $hash = $hashes{$form};
     my $mode = $format->{'mode'};
 
-    my $tasksize = `./oclHashcat64.bin -d 1 -w 3 -m $mode '$hash' $wordlist -r rules/rockyou-30000.rule --status-automat --runtime 10 | sed -rn 's/STATUS.*PROGRESS\\t([0-9]+)\\t.*/\\1/p' | tail -n 1`;
-    $tasksize = $tasksize * 12;  # progress made in 10 sec * 12 ~= progress made in 120 sec
+    my $tasksize = `./oclHashcat64.bin -d 1 -w 3 -m $mode '$hash' $wordlist -r rules/rockyou-30000.rule --status-automat --runtime 20 | sed -rn 's/STATUS.*PROGRESS\\t([0-9]+)\\t.*/\\1/p' | tail -n 1`;
+    $tasksize = $tasksize * 10;  # progress made in 20 sec * 10 ~= progress made in 200 sec
 
     say "        {";
     say "            \"algorithm\": \"$form\",";

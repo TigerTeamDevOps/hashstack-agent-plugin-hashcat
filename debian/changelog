@@ -1,3 +1,9 @@
+hashstack-agent-plugin-oclhashcat (2.01-2sagitta1) trusty; urgency=medium
+
+  * move some formats over from jtr 
+
+ -- Jeremi Gosney <jgosney@sagitta.pw>  Wed, 27 Jan 2016 00:43:14 -0800
+
 hashstack-agent-plugin-oclhashcat (2.01-1sagitta1) trusty; urgency=medium
 
   * use all devices
