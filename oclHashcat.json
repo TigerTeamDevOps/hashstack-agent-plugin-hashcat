@@ -1086,6 +1086,13 @@
             "tasksize": 15994880
         },
         {
+            "algorithm": "eCryptfs",
+            "device": "gpu",
+            "keyspace_hack": true,
+            "mode": "12200",
+            "tasksize": 675840
+        },
+        {
             "algorithm": "RAR 3.x",
             "device": "gpu",
             "keyspace_hack": true,
