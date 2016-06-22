@@ -1229,27 +1229,27 @@
     "attacks": [
         {
             "attack": "dictionary",
-            "command": "/opt/hashstack/programs/hashcat/hashcat64.bin --opencl-device-types 1 -d 1 --session %id% --quiet --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable --gpu-temp-disable -w 2 -m %mode% -o %potfile% -s %skip% -l %limit% %hashfile% %wordlist%"
+            "command": "/opt/hashstack/programs/hashcat/hashcat64.bin --opencl-device-types 1 --session %id% --quiet --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable --gpu-temp-disable -w 2 -m %mode% -o %potfile% -s %skip% -l %limit% %hashfile% %wordlist%"
         },
         {
             "attack": "combinator",
-            "command": "/opt/hashstack/programs/hashcat/hashcat64.bin --opencl-device-types 1 -d 1 --session %id% --quiet --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable --gpu-temp-disable -w 2 -m %mode% -o %potfile% -a 1 -s %skip% -l %limit% %hashfile% %left_wordlist% %right_wordlist%"
+            "command": "/opt/hashstack/programs/hashcat/hashcat64.bin --opencl-device-types 1 --session %id% --quiet --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable --gpu-temp-disable -w 2 -m %mode% -o %potfile% -a 1 -s %skip% -l %limit% %hashfile% %left_wordlist% %right_wordlist%"
         },
         {
             "attack": "mask",
-            "command": "/opt/hashstack/programs/hashcat/hashcat64.bin --opencl-device-types 1 -d 1 --session %id% --quiet --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable --gpu-temp-disable -w 2 -m %mode% -o %potfile% -a 3 -s %skip% -l %limit% %cs1% %cs2% %cs3% %cs4% %hashfile% %mask%"
+            "command": "/opt/hashstack/programs/hashcat/hashcat64.bin --opencl-device-types 1 --session %id% --quiet --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable --gpu-temp-disable -w 2 -m %mode% -o %potfile% -a 3 -s %skip% -l %limit% %cs1% %cs2% %cs3% %cs4% %hashfile% %mask%"
         },
         {
             "attack": "rules",
-            "command": "/opt/hashstack/programs/hashcat/hashcat64.bin --opencl-device-types 1 -d 1 --session %id% --quiet --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable --gpu-temp-disable -w 2 -m %mode% -o %potfile% -s %skip% -l %limit% %hashfile% %wordlist% -r %rules%"
+            "command": "/opt/hashstack/programs/hashcat/hashcat64.bin --opencl-device-types 1 --session %id% --quiet --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable --gpu-temp-disable -w 2 -m %mode% -o %potfile% -s %skip% -l %limit% %hashfile% %wordlist% -r %rules%"
         },
         {
             "attack": "hybridLeft",
-            "command": "/opt/hashstack/programs/hashcat/hashcat64.bin --opencl-device-types 1 -d 1 --session %id% --quiet --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable --gpu-temp-disable -w 2 -m %mode% -o %potfile% -a 6 -s %skip% -l %limit% %cs1% %cs2% %cs3% %cs4% %hashfile% %wordlist% %mask%"
+            "command": "/opt/hashstack/programs/hashcat/hashcat64.bin --opencl-device-types 1 --session %id% --quiet --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable --gpu-temp-disable -w 2 -m %mode% -o %potfile% -a 6 -s %skip% -l %limit% %cs1% %cs2% %cs3% %cs4% %hashfile% %wordlist% %mask%"
         },
         {
             "attack": "hybridRight",
-            "command": "/opt/hashstack/programs/hashcat/hashcat64.bin --opencl-device-types 1 -d 1 --session %id% --quiet --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable --gpu-temp-disable -w 2 -m %mode% -o %potfile% -a 7 -s %skip% -l %limit% %cs1% %cs2% %cs3% %cs4% %hashfile% %mask% %wordlist%"
+            "command": "/opt/hashstack/programs/hashcat/hashcat64.bin --opencl-device-types 1 --session %id% --quiet --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable --gpu-temp-disable -w 2 -m %mode% -o %potfile% -a 7 -s %skip% -l %limit% %cs1% %cs2% %cs3% %cs4% %hashfile% %mask% %wordlist%"
         }
     ],
     "is_oclHashcat": true

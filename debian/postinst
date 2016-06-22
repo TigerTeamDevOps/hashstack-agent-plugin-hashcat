@@ -1,0 +1,5 @@
+#!/bin/sh
+
+restart hashstack-agent || start hashstack-agent
+
+exit 0

@@ -230,7 +230,7 @@ foreach my $entry (@modes)
     my $mode = $entry->{'mode'};
     my $hash = $entry->{'hash'};
 
-    $tasksize = `$hashcat --opencl-platform 2 --opencl-device-types 1 -d 1 -w 3 --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable --gpu-temp-disable --status --machine-readable --runtime 20 --status-timer 20 -m $mode '$hash' $wordlist -r $rules | sed -rn 's/STATUS.*PROGRESS\\t([0-9]+)\\t.*/\\1/p' | tail -n 1`;
+    $tasksize = `$hashcat --opencl-device-types 1 -w 3 --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable --gpu-temp-disable --status --machine-readable --runtime 20 --status-timer 20 -m $mode '$hash' $wordlist -r $rules | sed -rn 's/STATUS.*PROGRESS\\t([0-9]+)\\t.*/\\1/p' | tail -n 1`;
 
     if ($tasksize != 0)
     {
@@ -238,7 +238,7 @@ foreach my $entry (@modes)
     }
     else
     {
-        $tasksize = `$hashcat --opencl-platform 2 --opencl-device-types 1 -d 1 -w 3 --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable --gpu-temp-disable --status --machine-readable --runtime 100 --status-timer 100 -m $mode '$hash' $wordlist -r $rules | sed -rn 's/STATUS.*PROGRESS\\t([0-9]+)\\t.*/\\1/p' | tail -n 1`;
+        $tasksize = `$hashcat --opencl-device-types 1 -w 3 --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable --gpu-temp-disable --status --machine-readable --runtime 100 --status-timer 100 -m $mode '$hash' $wordlist -r $rules | sed -rn 's/STATUS.*PROGRESS\\t([0-9]+)\\t.*/\\1/p' | tail -n 1`;
 
         $tasksize *= 2;     # progress made in 100 sec * 2 ~= progress made in 200 sec
     }
@@ -261,7 +261,7 @@ foreach my $entry (@modes)
 
     $tasksize = 0;
 
-    $tasksize = `$hashcat --opencl-platform 1 --opencl-device-types 2 -d 1 -w 3 --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable --gpu-temp-disable --status --machine-readable --runtime 20 --status-timer 20 -m $mode '$hash' $wordlist -r $rules | sed -rn 's/STATUS.*PROGRESS\\t([0-9]+)\\t.*/\\1/p' | tail -n 1`;
+    $tasksize = `$hashcat --opencl-device-types 2 -d 1 -w 3 --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable --gpu-temp-disable --status --machine-readable --runtime 20 --status-timer 20 -m $mode '$hash' $wordlist -r $rules | sed -rn 's/STATUS.*PROGRESS\\t([0-9]+)\\t.*/\\1/p' | tail -n 1`;
 
     if ($tasksize != 0)
     {
@@ -269,7 +269,7 @@ foreach my $entry (@modes)
     }
     else
     {
-        $tasksize = `$hashcat --opencl-platform 1 --opencl-device-types 2 -d 1 -w 3 --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable --gpu-temp-disable --status --machine-readable --runtime 100 --status-timer 100 -m $mode '$hash' $wordlist -r $rules | sed -rn 's/STATUS.*PROGRESS\\t([0-9]+)\\t.*/\\1/p' | tail -n 1`;
+        $tasksize = `$hashcat --opencl-device-types 2 -d 1 -w 3 --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable --gpu-temp-disable --status --machine-readable --runtime 100 --status-timer 100 -m $mode '$hash' $wordlist -r $rules | sed -rn 's/STATUS.*PROGRESS\\t([0-9]+)\\t.*/\\1/p' | tail -n 1`;
 
          $tasksize *= 2;
     }

@@ -1,3 +1,9 @@
+hashstack-agent-plugin-hashcat (3.00-1sagitta1) trusty; urgency=medium
+
+  * fix for AMD OpenCL CPU runtime
+
+ -- Jeremi Gosney <jgosney@sagitta.pw>  Wed, 22 Jun 2016 00:49:29 -0700
+
 hashstack-agent-plugin-hashcat (3.00-0sagitta1) trusty; urgency=medium
 
   * initial release
