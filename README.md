@@ -1,3 +1,3 @@
-# hashstack-agent-plugin-oclhashcat
+# hashstack-agent-plugin-hashcat
 
-oclHashcat agent plugin for Hashstack
+Hashcat agent plugin for Hashstack
