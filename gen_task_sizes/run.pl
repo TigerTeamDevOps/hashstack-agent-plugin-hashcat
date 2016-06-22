@@ -176,6 +176,7 @@ my @modes = (
     { mode => 11800, algorithm => 'GOST R 34.11-2012 (Streebog) 512-bit', hash => '5d5bdba48c8f89ee6c0a0e11023540424283e84902de08013aeeb626e819950bb32842903593a1d2e8f71897ff7fe72e17ac9ba8ce1d1d2f7e9c4359ea63bdc3' },
     { mode => 11900, algorithm => 'PBKDF2-HMAC-MD5', hash => 'md5:1000:MTg1MzA=:Lz84VOcrXd699Edsj34PP98+f4f3S0rTZ4kHAIHoAjs=' },
     { mode => 12000, algorithm => 'PBKDF2-HMAC-SHA1', hash => 'sha1:1000:MzU4NTA4MzIzNzA1MDQ=:19ofiY+ahBXhvkDsp0j2ww==' },
+    { mode => 12000, algorithm => 'Apple iOS 7+ .plist', hash => 'sha1:1000:MzU4NTA4MzIzNzA1MDQ=:19ofiY+ahBXhvkDsp0j2ww==' },
     { mode => 12100, algorithm => 'PBKDF2-HMAC-SHA512', hash => 'sha512:1000:ODQyMDEwNjQyODY=:MKaHNWXUsuJB3IEwBHbm3w==' },
     { mode => 12200, algorithm => 'eCryptfs', hash => '$ecryptfs$0$1$7c95c46e82f364b3$60bba503f0a42d0c' },
     { mode => 12300, algorithm => 'Oracle T: Type (Oracle 12+)', hash => '78281A9C0CF626BD05EFC4F41B515B61D6C4D95A250CD4A605CA0EF97168D670EBCB5673B6F5A2FB9CC4E0C0101E659C0C4E3B9B3BEDA846CD15508E88685A2334141655046766111066420254008225' },
