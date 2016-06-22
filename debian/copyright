@@ -1,4 +1,4 @@
-oclHashcat, advanced password recovery
+Hashcat, advanced password recovery
 
 Purpose
 
@@ -9,25 +9,24 @@ restricted to legal use.
 
 License agreement
 
-1. All copyrights to this program are exclusively owned by the author, atom.
+The MIT License (MIT)
 
-2. You may only use this software for legal purposes.
+Copyright (c) 2015-2016 Jens Steube
 
-3. THIS PROGRAM IS DISTRIBUTED "AS IS".  NO WARRANTY OF ANY KIND IS
-EXPRESSED OR IMPLIED. YOU USE THIS SOFTWARE AT YOUR OWN RISK. THE AUTHOR
-WILL NOT BE LIABLE FOR DATA LOSS, DAMAGES, LOSS OF PROFITS OR ANY OTHER
-KIND OF LOSS WHILE USING OR MISUSING THIS SOFTWARE.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-4. If your countries law(s) do not allow restrictions as in (3.) you
-need to get an additional, written and individual license by the
-copyright holder to use this software. Unless you have such a
-license, you are not allowed to use the software.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-5. You may not rent, lease, sell, modify, decompile, disassemble, or reverse
-engineer this program or any subset of this program. Any such unauthorized
-use shall result in immediate and automatic termination of this license and
-may result in criminal and/or civil prosecution.
-
-6. Redistribution of the original package, in whole or in part, or a modified
-version as needed for distribution packaging is permitted without restrictions.
-
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

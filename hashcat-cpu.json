@@ -1,0 +1,1256 @@
+{
+    "algorithms": [
+        {
+            "algorithm": "MD5",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "0",
+            "tasksize": 32142458880
+        },
+        {
+            "algorithm": "md5($pass.$salt)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "10",
+            "tasksize": 25514803200
+        },
+        {
+            "algorithm": "Joomla < 2.5.18",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "11",
+            "tasksize": 26940211200
+        },
+        {
+            "algorithm": "PostgreSQL",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "12",
+            "tasksize": 26895974400
+        },
+        {
+            "algorithm": "md5($salt.$pass)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "20",
+            "tasksize": 18080071680
+        },
+        {
+            "algorithm": "osCommerce, xt:Commerce",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "21",
+            "tasksize": 18682675200
+        },
+        {
+            "algorithm": "Juniper Netscreen/SSG (ScreenOS)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "22",
+            "tasksize": 18593710080
+        },
+        {
+            "algorithm": "Skype",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "23",
+            "tasksize": 17874616320
+        },
+        {
+            "algorithm": "md5(unicode($pass).$salt)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "30",
+            "tasksize": 25962086400
+        },
+        {
+            "algorithm": "md5($salt.unicode($pass))",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "40",
+            "tasksize": 21232189440
+        },
+        {
+            "algorithm": "HMAC-MD5 (key = $pass)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "50",
+            "tasksize": 20638433280
+        },
+        {
+            "algorithm": "HMAC-MD5 (key = $salt)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "60",
+            "tasksize": 26589265920
+        },
+        {
+            "algorithm": "SHA1",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "100",
+            "tasksize": 24857149440
+        },
+        {
+            "algorithm": "nsldap, SHA-1(Base64), Netscape LDAP SHA",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "101",
+            "tasksize": 26107576320
+        },
+        {
+            "algorithm": "sha1($pass.$salt)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "110",
+            "tasksize": 19508428800
+        },
+        {
+            "algorithm": "nsldaps, SSHA-1(Base64), Netscape LDAP SSHA",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "111",
+            "tasksize": 19936051200
+        },
+        {
+            "algorithm": "Oracle 11g/12c",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "112",
+            "tasksize": 19015925760
+        },
+        {
+            "algorithm": "sha1($salt.$pass)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "120",
+            "tasksize": 17156505600
+        },
+        {
+            "algorithm": "SMF > v1.1",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "121",
+            "tasksize": 14541127680
+        },
+        {
+            "algorithm": "OSX v10.4, v10.5, v10.6",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "122",
+            "tasksize": 15907553280
+        },
+        {
+            "algorithm": "Django (SHA-1)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "124",
+            "tasksize": 16010772480
+        },
+        {
+            "algorithm": "ArubaOS",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "125",
+            "tasksize": 16078602240
+        },
+        {
+            "algorithm": "sha1(unicode($pass).$salt)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "130",
+            "tasksize": 19433226240
+        },
+        {
+            "algorithm": "MSSQL(2000)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "131",
+            "tasksize": 19339345920
+        },
+        {
+            "algorithm": "MSSQL(2005)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "132",
+            "tasksize": 19452395520
+        },
+        {
+            "algorithm": "PeopleSoft",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "133",
+            "tasksize": 19936051200
+        },
+        {
+            "algorithm": "sha1($salt.unicode($pass))",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "140",
+            "tasksize": 15273000960
+        },
+        {
+            "algorithm": "EPiServer 6.x < v4",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "141",
+            "tasksize": 13823508480
+        },
+        {
+            "algorithm": "HMAC-SHA1 (key = $pass)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "150",
+            "tasksize": 13872660480
+        },
+        {
+            "algorithm": "HMAC-SHA1 (key = $salt)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "160",
+            "tasksize": 19930152960
+        },
+        {
+            "algorithm": "sha1(LinkedIn)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "190",
+            "tasksize": 24117903360
+        },
+        {
+            "algorithm": "MySQL323",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "200",
+            "tasksize": 38981560320
+        },
+        {
+            "algorithm": "MySQL4.1/MySQL5",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "300",
+            "tasksize": 16447242240
+        },
+        {
+            "algorithm": "phpass, MD5(Wordpress), MD5(phpBB3), MD5(Joomla)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "400",
+            "tasksize": 75878400
+        },
+        {
+            "algorithm": "md5crypt, MD5(Unix), FreeBSD MD5, Cisco-IOS MD5",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "500",
+            "tasksize": 87360000
+        },
+        {
+            "algorithm": "Juniper IVE",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "501",
+            "tasksize": 87360000
+        },
+        {
+            "algorithm": "MD4",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "900",
+            "tasksize": 35000156160
+        },
+        {
+            "algorithm": "NTLM",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "1000",
+            "tasksize": 35033579520
+        },
+        {
+            "algorithm": "Domain Cached Credentials, mscash",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "1100",
+            "tasksize": 25264128000
+        },
+        {
+            "algorithm": "SHA256",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "1400",
+            "tasksize": 13306429440
+        },
+        {
+            "algorithm": "sha256($pass.$salt)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "1410",
+            "tasksize": 10669916160
+        },
+        {
+            "algorithm": "sha256($salt.$pass)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "1420",
+            "tasksize": 8918138880
+        },
+        {
+            "algorithm": "hMailServer",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "1421",
+            "tasksize": 8792801280
+        },
+        {
+            "algorithm": "sha256(unicode($pass).$salt)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "1430",
+            "tasksize": 9968025600
+        },
+        {
+            "algorithm": "sha256($salt.unicode($pass))",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "1440",
+            "tasksize": 7942963200
+        },
+        {
+            "algorithm": "EPiServer 6.x > v4",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "1441",
+            "tasksize": 8607989760
+        },
+        {
+            "algorithm": "HMAC-SHA256 (key = $pass)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "1450",
+            "tasksize": 7529103360
+        },
+        {
+            "algorithm": "HMAC-SHA256 (key = $salt)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "1460",
+            "tasksize": 12444560640
+        },
+        {
+            "algorithm": "descrypt, DES(Unix), Traditional DES",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "1500",
+            "tasksize": 9767550000000
+        },
+        {
+            "algorithm": "md5apr1, MD5(APR), Apache MD5",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "1600",
+            "tasksize": 87091200
+        },
+        {
+            "algorithm": "SHA512",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "1700",
+            "tasksize": 9926737920
+        },
+        {
+            "algorithm": "sha512($pass.$salt)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "1710",
+            "tasksize": 8544583680
+        },
+        {
+            "algorithm": "SSHA-512(Base64), LDAP {SSHA512}",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "1711",
+            "tasksize": 8480194560
+        },
+        {
+            "algorithm": "sha512($salt.$pass)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "1720",
+            "tasksize": 8530790400
+        },
+        {
+            "algorithm": "OSX v10.7",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "1722",
+            "tasksize": 8883302400
+        },
+        {
+            "algorithm": "sha512(unicode($pass).$salt)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "1730",
+            "tasksize": 9124577280
+        },
+        {
+            "algorithm": "MSSQL(2012), MSSQL(2014)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "1731",
+            "tasksize": 9541386240
+        },
+        {
+            "algorithm": "sha512($salt.unicode($pass))",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "1740",
+            "tasksize": 8798699520
+        },
+        {
+            "algorithm": "HMAC-SHA512 (key = $pass)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "1750",
+            "tasksize": 3120353280
+        },
+        {
+            "algorithm": "HMAC-SHA512 (key = $salt)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "1760",
+            "tasksize": 5399923200
+        },
+        {
+            "algorithm": "sha512crypt, SHA512(Unix)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "1800",
+            "tasksize": 979200
+        },
+        {
+            "algorithm": "Domain Cached Credentials2, mscash2",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "2100",
+            "tasksize": 4377600
+        },
+        {
+            "algorithm": "Cisco-PIX MD5",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "2400",
+            "tasksize": 37758566400
+        },
+        {
+            "algorithm": "Cisco-ASA MD5",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "2410",
+            "tasksize": 29255270400
+        },
+        {
+            "algorithm": "WPA/WPA2",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "2500",
+            "tasksize": 5222400
+        },
+        {
+            "algorithm": "Double MD5",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "2600",
+            "tasksize": 21263155200
+        },
+        {
+            "algorithm": "vBulletin < v3.8.5",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "2611",
+            "tasksize": 20054016000
+        },
+        {
+            "algorithm": "PHPS",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "2612",
+            "tasksize": 21260697600
+        },
+        {
+            "algorithm": "vBulletin > v3.8.5",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "2711",
+            "tasksize": 18373017600
+        },
+        {
+            "algorithm": "IPB2+, MyBB1.2+",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "2811",
+            "tasksize": 18785894400
+        },
+        {
+            "algorithm": "LM",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "3000",
+            "tasksize": 7219445760
+        },
+        {
+            "algorithm": "Oracle 7-10g, DES(Oracle)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "3100",
+            "tasksize": 1710858240
+        },
+        {
+            "algorithm": "bcrypt",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "3200",
+            "tasksize": 1309440
+        },
+        {
+            "algorithm": "md5($salt.md5($pass))",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "3710",
+            "tasksize": 18108579840
+        },
+        {
+            "algorithm": "Mediawiki B type",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "3711",
+            "tasksize": 17213030400
+        },
+        {
+            "algorithm": "md5($pass.$salt.$pass)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "3800",
+            "tasksize": 16779509760
+        },
+        {
+            "algorithm": "md5(strtoupper(md5($pass)))",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "4300",
+            "tasksize": 20250624000
+        },
+        {
+            "algorithm": "md5(sha1($pass))",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "4400",
+            "tasksize": 18992332800
+        },
+        {
+            "algorithm": "Double SHA1",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "4500",
+            "tasksize": 17045913600
+        },
+        {
+            "algorithm": "sha1(md5($pass))",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "4700",
+            "tasksize": 19424870400
+        },
+        {
+            "algorithm": "MD5(Chap), iSCSI CHAP authentication",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "4800",
+            "tasksize": 25495142400
+        },
+        {
+            "algorithm": "sha1($salt.$pass.$salt)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "4900",
+            "tasksize": 11450449920
+        },
+        {
+            "algorithm": "SHA-3(Keccak)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "5000",
+            "tasksize": 8595025920
+        },
+        {
+            "algorithm": "Half MD5",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "5100",
+            "tasksize": 31815106560
+        },
+        {
+            "algorithm": "Password Safe v3",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "5200",
+            "tasksize": 3283200
+        },
+        {
+            "algorithm": "IKE-PSK MD5",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "5300",
+            "tasksize": 8336179200
+        },
+        {
+            "algorithm": "IKE-PSK SHA1",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "5400",
+            "tasksize": 5444567040
+        },
+        {
+            "algorithm": "NetNTLMv1-VANILLA / NetNTLMv1+ESS",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "5500",
+            "tasksize": 29091102720
+        },
+        {
+            "algorithm": "NetNTLMv2",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "5600",
+            "tasksize": 10631577600
+        },
+        {
+            "algorithm": "Cisco-IOS SHA256",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "5700",
+            "tasksize": 12324449280
+        },
+        {
+            "algorithm": "Samsung Android Password/PIN",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "5800",
+            "tasksize": 14492160
+        },
+        {
+            "algorithm": "RipeMD160",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "6000",
+            "tasksize": 24265359360
+        },
+        {
+            "algorithm": "Whirlpool",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "6100",
+            "tasksize": 1707847680
+        },
+        {
+            "algorithm": "TrueCrypt 5.0+ RipeMD160 (No Cascading)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "6211",
+            "tasksize": 483840
+        },
+        {
+            "algorithm": "TrueCrypt 5.0+ RipeMD160 (2-cipher Cascade)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "6212",
+            "tasksize": 245760
+        },
+        {
+            "algorithm": "TrueCrypt 5.0+ RipeMD160 (3-cipher Cascade)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "6213",
+            "tasksize": 192000
+        },
+        {
+            "algorithm": "TrueCrypt 5.0+ SHA512 (No Cascading)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "6221",
+            "tasksize": 2688000
+        },
+        {
+            "algorithm": "TrueCrypt 5.0+ SHA512 (2-cipher Cascade)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "6222",
+            "tasksize": 1317120
+        },
+        {
+            "algorithm": "TrueCrypt 5.0+ SHA512 (3-cipher Cascade)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "6223",
+            "tasksize": 890880
+        },
+        {
+            "algorithm": "TrueCrypt 5.0+ Whirlpool (No Cascading)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "6231",
+            "tasksize": 480000
+        },
+        {
+            "algorithm": "TrueCrypt 5.0+ Whirlpool (2-cipher Cascade)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "6232",
+            "tasksize": 207360
+        },
+        {
+            "algorithm": "TrueCrypt 5.0+ Whirlpool (3-cipher Cascade)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "6233",
+            "tasksize": 138240
+        },
+        {
+            "algorithm": "TrueCrypt 5.0+ RipeMD160 boot mode (No Cascading)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "6241",
+            "tasksize": 1140480
+        },
+        {
+            "algorithm": "TrueCrypt 5.0+ RipeMD160 boot mode (2-cipher Cascade)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "6242",
+            "tasksize": 629760
+        },
+        {
+            "algorithm": "TrueCrypt 5.0+ RipeMD160 boot mode (3-cipher Cascade)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "6243",
+            "tasksize": 441600
+        },
+        {
+            "algorithm": "AIX {smd5}",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "6300",
+            "tasksize": 86822400
+        },
+        {
+            "algorithm": "AIX {ssha256}",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "6400",
+            "tasksize": 51118080
+        },
+        {
+            "algorithm": "AIX {ssha512}",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "6500",
+            "tasksize": 43718400
+        },
+        {
+            "algorithm": "1Password, agilekeychain",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "6600",
+            "tasksize": 8547840
+        },
+        {
+            "algorithm": "AIX {ssha1}",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "6700",
+            "tasksize": 121896960
+        },
+        {
+            "algorithm": "Lastpass",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "6800",
+            "tasksize": 6796800
+        },
+        {
+            "algorithm": "GOST R 34.11-94",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "6900",
+            "tasksize": 1812142080
+        },
+        {
+            "algorithm": "OSX v10.8 / v10.9",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "7100",
+            "tasksize": 168192
+        },
+        {
+            "algorithm": "GRUB 2",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "7200",
+            "tasksize": 564480
+        },
+        {
+            "algorithm": "IPMI2 RAKP HMAC-SHA1",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "7300",
+            "tasksize": 11853803520
+        },
+        {
+            "algorithm": "sha256crypt, SHA256(Unix)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "7400",
+            "tasksize": 656640
+        },
+        {
+            "algorithm": "Kerberos 5 AS-REQ Pre-Auth etype 23",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "7500",
+            "tasksize": 1585858560
+        },
+        {
+            "algorithm": "Redmine Project Management Web App",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "7600",
+            "tasksize": 13769441280
+        },
+        {
+            "algorithm": "SAP CODVN B (BCODE)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "7700",
+            "tasksize": 9767550000000
+        },
+        {
+            "algorithm": "SAP CODVN F/G (PASSCODE)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "7800",
+            "tasksize": 3838464000
+        },
+        {
+            "algorithm": "Drupal7",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "7900",
+            "tasksize": 314880
+        },
+        {
+            "algorithm": "Sybase ASE",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "8000",
+            "tasksize": 5384355840
+        },
+        {
+            "algorithm": "Citrix Netscaler",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "8100",
+            "tasksize": 24357273600
+        },
+        {
+            "algorithm": "1Password, cloudkeychain",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "8200",
+            "tasksize": 57600
+        },
+        {
+            "algorithm": "DNSSEC (NSEC3)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "8300",
+            "tasksize": 13294632960
+        },
+        {
+            "algorithm": "WBB3, Woltlab Burning Board 3",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "8400",
+            "tasksize": 9874636800
+        },
+        {
+            "algorithm": "RACF",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "8500",
+            "tasksize": 9767550000000
+        },
+        {
+            "algorithm": "Lotus Notes/Domino 5",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "8600",
+            "tasksize": 690923520
+        },
+        {
+            "algorithm": "Lotus Notes/Domino 6",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "8700",
+            "tasksize": 215792640
+        },
+        {
+            "algorithm": "Android FDE <= 4.3",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "8800",
+            "tasksize": 1958400
+        },
+        {
+            "algorithm": "scrypt",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "8900",
+            "tasksize": 21672960
+        },
+        {
+            "algorithm": "Password Safe v2",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "9000",
+            "tasksize": 30616320
+        },
+        {
+            "algorithm": "Lotus Notes/Domino 8",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "9100",
+            "tasksize": 1612800
+        },
+        {
+            "algorithm": "Cisco $8$",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "9200",
+            "tasksize": 529920
+        },
+        {
+            "algorithm": "Cisco $9$",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "9300",
+            "tasksize": 760320
+        },
+        {
+            "algorithm": "Microsoft Office 2007",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "9400",
+            "tasksize": 292608
+        },
+        {
+            "algorithm": "Microsoft Office 2010",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "9500",
+            "tasksize": 145152
+        },
+        {
+            "algorithm": "Microsoft Office 97-2003 MD5 + RC4",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "9700",
+            "tasksize": 1532160000
+        },
+        {
+            "algorithm": "Microsoft Office 97-2003 SHA1 + RC4",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "9800",
+            "tasksize": 2030469120
+        },
+        {
+            "algorithm": "Radmin2",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "9900",
+            "tasksize": 30965760000
+        },
+        {
+            "algorithm": "Django (PBKDF2-SHA256)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "10000",
+            "tasksize": 794880
+        },
+        {
+            "algorithm": "SipHash",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "10100",
+            "tasksize": 41260354560
+        },
+        {
+            "algorithm": "Cram MD5",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "10200",
+            "tasksize": 20736245760
+        },
+        {
+            "algorithm": "SAP CODVN H (PWDSALTEDHASH)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "10300",
+            "tasksize": 15275520
+        },
+        {
+            "algorithm": "Adobe PDF 1.1 - 1.3 (Acrobat 2 - 4)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "10400",
+            "tasksize": 3210854400
+        },
+        {
+            "algorithm": "Adobe PDF 1.4 - 1.6 (Acrobat 5 - 8)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "10500",
+            "tasksize": 132249600
+        },
+        {
+            "algorithm": "Adobe PDF 1.7 Level 3 (Acrobat 9)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "10600",
+            "tasksize": 10576527360
+        },
+        {
+            "algorithm": "Adobe PDF 1.7 Level 8 (Acrobat 10 - 11)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "10700",
+            "tasksize": 833280
+        },
+        {
+            "algorithm": "SHA384",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "10800",
+            "tasksize": 10127278080
+        },
+        {
+            "algorithm": "PBKDF2-HMAC-SHA256",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "10900",
+            "tasksize": 17145600
+        },
+        {
+            "algorithm": "PrestaShop",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "11000",
+            "tasksize": 26990346240
+        },
+        {
+            "algorithm": "PostgreSQL Challenge-Response Authentication (MD5)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "11100",
+            "tasksize": 18549964800
+        },
+        {
+            "algorithm": "MySQL Challenge-Response Authentication (SHA1)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "11200",
+            "tasksize": 8771174400
+        },
+        {
+            "algorithm": "SIP digest authentication (MD5)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "11400",
+            "tasksize": 22433863680
+        },
+        {
+            "algorithm": "CRC32",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "11500",
+            "tasksize": 33076592640
+        },
+        {
+            "algorithm": "GOST R 34.11-2012 (Streebog) 256-bit",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "11700",
+            "tasksize": 726835200
+        },
+        {
+            "algorithm": "GOST R 34.11-2012 (Streebog) 512-bit",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "11800",
+            "tasksize": 767232000
+        },
+        {
+            "algorithm": "PBKDF2-HMAC-MD5",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "11900",
+            "tasksize": 76032000
+        },
+        {
+            "algorithm": "PBKDF2-HMAC-SHA1",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "12000",
+            "tasksize": 43875840
+        },
+        {
+            "algorithm": "PBKDF2-HMAC-SHA512",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "12100",
+            "tasksize": 6236160
+        },
+        {
+            "algorithm": "eCryptfs",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "12200",
+            "tasksize": 68352
+        },
+        {
+            "algorithm": "Oracle T: Type (Oracle 12+)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "12300",
+            "tasksize": 576000
+        },
+        {
+            "algorithm": "BSDiCrypt, Extended DES",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "12400",
+            "tasksize": 21296640
+        },
+        {
+            "algorithm": "RAR v3",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "12500",
+            "tasksize": 122880
+        },
+        {
+            "algorithm": "ColdFusion 10+",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "12600",
+            "tasksize": 13854113280
+        },
+        {
+            "algorithm": "Blockchain.info Wallet",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "12700",
+            "tasksize": 349962240
+        },
+        {
+            "algorithm": "MS-AzureSync PBKDF2-HMAC-SHA256",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "12800",
+            "tasksize": 30965760
+        },
+        {
+            "algorithm": "Android FDE (Samsung DEK)",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "12900",
+            "tasksize": 622080
+        },
+        {
+            "algorithm": "RAR v5",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "13000",
+            "tasksize": 81408
+        },
+        {
+            "algorithm": "AxCrypt",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "13200",
+            "tasksize": 1459200
+        },
+        {
+            "algorithm": "AxCrypt in-memory SHA1",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "13300",
+            "tasksize": 24164597760
+        },
+        {
+            "algorithm": "KeePass",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "13400",
+            "tasksize": 215040
+        },
+        {
+            "algorithm": "PeopleSoft PS_TOKEN",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "13500",
+            "tasksize": 18628300800
+        },
+        {
+            "algorithm": "WinZIP AES",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "13600",
+            "tasksize": 2718720
+        },
+        {
+            "algorithm": "Windows 8+ Phone PIN/Password",
+            "device": "cpu",
+            "keyspace_hack": true,
+            "mode": "13800",
+            "tasksize": 2079866880
+        }
+    ],
+    "attacks": [
+        {
+            "attack": "dictionary",
+            "command": "/opt/hashstack/programs/hashcat/hashcat64.bin --opencl-device-types 1 -d 1 --session %id% --quiet --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable --gpu-temp-disable -w 2 -m %mode% -o %potfile% -s %skip% -l %limit% %hashfile% %wordlist%"
+        },
+        {
+            "attack": "combinator",
+            "command": "/opt/hashstack/programs/hashcat/hashcat64.bin --opencl-device-types 1 -d 1 --session %id% --quiet --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable --gpu-temp-disable -w 2 -m %mode% -o %potfile% -a 1 -s %skip% -l %limit% %hashfile% %left_wordlist% %right_wordlist%"
+        },
+        {
+            "attack": "mask",
+            "command": "/opt/hashstack/programs/hashcat/hashcat64.bin --opencl-device-types 1 -d 1 --session %id% --quiet --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable --gpu-temp-disable -w 2 -m %mode% -o %potfile% -a 3 -s %skip% -l %limit% %cs1% %cs2% %cs3% %cs4% %hashfile% %mask%"
+        },
+        {
+            "attack": "rules",
+            "command": "/opt/hashstack/programs/hashcat/hashcat64.bin --opencl-device-types 1 -d 1 --session %id% --quiet --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable --gpu-temp-disable -w 2 -m %mode% -o %potfile% -s %skip% -l %limit% %hashfile% %wordlist% -r %rules%"
+        },
+        {
+            "attack": "hybridLeft",
+            "command": "/opt/hashstack/programs/hashcat/hashcat64.bin --opencl-device-types 1 -d 1 --session %id% --quiet --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable --gpu-temp-disable -w 2 -m %mode% -o %potfile% -a 6 -s %skip% -l %limit% %cs1% %cs2% %cs3% %cs4% %hashfile% %wordlist% %mask%"
+        },
+        {
+            "attack": "hybridRight",
+            "command": "/opt/hashstack/programs/hashcat/hashcat64.bin --opencl-device-types 1 -d 1 --session %id% --quiet --weak-hash-threshold 0 --restore-disable --logfile-disable --potfile-disable --gpu-temp-disable -w 2 -m %mode% -o %potfile% -a 7 -s %skip% -l %limit% %cs1% %cs2% %cs3% %cs4% %hashfile% %mask% %wordlist%"
+        }
+    ],
+    "is_oclHashcat": true
+}

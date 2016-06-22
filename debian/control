@@ -1,13 +1,16 @@
-Source: hashstack-agent-plugin-oclhashcat
+Source: hashstack-agent-plugin-hashcat
 Maintainer: Jeremi Gosney <jgosney@sagitta.pw> 
 Section: misc
 Priority: important
 Standards-Version: 3.9.2
 Build-Depends: p7zip-full, make 
 
-Package: hashstack-agent-plugin-oclhashcat
+Package: hashstack-agent-plugin-hashcat
 Architecture: amd64
-Depends: fglrx, libc6 (>= 2.3.4)
-Description: oclHashcat agent plugin for Hashstack
- oclHashcat agent plugin for Hashstack
+Depends: hashstack-amd-driver | hashstack-nvidia-driver, intel-opencl, libxnvctrl0
+Replaces: hashstack-agent-plugin-oclhashcat, hashstack-agent-plugin-cudahashcat, hashstack-agent-plugin-hashcat-cli
+Breaks: hashstack-agent-plugin-oclhashcat, hashstack-agent-plugin-cudahashcat, hashstack-agent-plugin-hashcat-cli
+Description: Hashcat agent plugin for Hashstack
+ Hashcat agent plugin for Hashstack, with support for both CPU and GPU OpenCL devices.
+ This package replaces the previous plugins for oclHashcat, cudaHashcat, and hashcat-cli.
 

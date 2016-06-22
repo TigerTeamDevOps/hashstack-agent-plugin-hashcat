@@ -1,11 +1,10 @@
 #!/bin/sh
 
-find /opt/hashstack/programs/oclHashcat -name \*.outfiles -print0 | xargs -0 rm -rf 2>/dev/null
-find /opt/hashstack/programs/oclHashcat -name \*.induct -print0 | xargs -0 rm -rf 2>/dev/null
-find /opt/hashstack/programs/oclHashcat -name \*.log -print0 | xargs -0 rm -rf 2>/dev/null
+find /opt/hashstack/programs/hashcat -name \*.outfiles -print0 | xargs -0 rm -rf 2>/dev/null
+find /opt/hashstack/programs/hashcat -name \*.induct -print0 | xargs -0 rm -rf 2>/dev/null
+find /opt/hashstack/programs/hashcat -name \*.log -print0 | xargs -0 rm -rf 2>/dev/null
 
-rm -fr /opt/hashstack/programs/oclHashcat/kernels
-rm -f  /opt/hashstack/programs/oclHashcat/eula.accepted
-rm -f  /opt/hashstack/programs/oclHashcat/oclHashcat64.bin
+rm -fr /opt/hashstack/programs/hashcat/kernels/*
+rm -f  /opt/hashstack/programs/hashcat/hashcat64.bin
 
 exit 0
