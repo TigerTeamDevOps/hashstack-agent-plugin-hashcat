@@ -425,7 +425,7 @@
             "device": "gpu",
             "keyspace_hack": true,
             "mode": "1800",
-            "tasksize": 31334400
+            "tasksize": 501350400
         },
         {
             "algorithm": "Domain Cached Credentials2, mscash2",
